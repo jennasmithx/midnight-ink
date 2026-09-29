@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var header = document.querySelector('.site-header');
   if (header) {
     window.addEventListener('scroll', function () {
-      if (window.scrollY > 10) header.style.borderBottomColor = 'rgba(201,162,39,0.35)';
-      else header.style.borderBottomColor = 'rgba(201,162,39,0.15)';
+      if (window.scrollY > 10) header.style.borderBottomColor = 'rgba(216,207,184,0.35)';
+      else header.style.borderBottomColor = 'rgba(216,207,184,0.15)';
     });
   }
 
