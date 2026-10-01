@@ -718,6 +718,7 @@ form.contact-form { display: flex; flex-direction: column; gap: 22px; }
   text-transform: uppercase;
   color: var(--grey-dim);
 }
+.field-optional { text-transform: none; letter-spacing: 0; opacity: 0.7; }
 .field input, .field select, .field textarea {
   background: var(--ink-charcoal);
   border: 1px solid var(--ink-line);

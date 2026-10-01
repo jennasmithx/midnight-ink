@@ -120,7 +120,7 @@
       </div>
 
       <div>
-        <h3>Send an Enquiry</h3>
+        <h3>Send an Enquiry or Ask a Question</h3>
         <form class="contact-form">
           <div class="form-row">
             <div class="field">
@@ -138,8 +138,9 @@
               <input type="email" id="email" name="email" required placeholder="you@email.com">
             </div>
             <div class="field">
-              <label for="placement">Placement</label>
+              <label for="placement">Placement <span class="field-optional">(if applicable)</span></label>
               <select id="placement" name="placement">
+                <option>Just have a question</option>
                 <option>Arm / Sleeve</option>
                 <option>Back / Shoulder</option>
                 <option>Chest / Ribs</option>
@@ -150,8 +151,9 @@
             </div>
           </div>
           <div class="field">
-            <label for="size">Approximate Size</label>
+            <label for="size">Approximate Size <span class="field-optional">(if applicable)</span></label>
             <select id="size" name="size">
+              <option>N/A — just asking</option>
               <option>Small (up to 5cm)</option>
               <option>Medium (5cm – 15cm)</option>
               <option>Large (15cm – 25cm)</option>
@@ -159,8 +161,8 @@
             </select>
           </div>
           <div class="field">
-            <label for="message">Tell Us About Your Idea</label>
-            <textarea id="message" name="message" required placeholder="Style, references, inspiration, preferred dates..."></textarea>
+            <label for="message">Your Idea or Question</label>
+            <textarea id="message" name="message" required placeholder="Tell us about the piece you have in mind, or just ask us anything..."></textarea>
           </div>
           <button type="submit" class="btn btn-solid" style="align-self:flex-start;">Send Enquiry</button>
           <p class="form-note">We reply to all enquiries within 24 hours. This form doesn't send automatically yet — connect it to your email or booking tool to go live.</p>

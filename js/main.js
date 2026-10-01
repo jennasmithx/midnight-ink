@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         msg.innerHTML =
           '<div class="fm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>' +
           '<h4>Thank You' + (firstName ? ', ' + escapeHtml(firstName) : '') + '</h4>' +
-          '<p>We will contact you shortly to confirm your consultation. Your email app should be opening now to send this through — if it doesn’t, reach us directly below.</p>' +
+          '<p>We will get back to you shortly. Your email app should be opening now to send this through — if it doesn’t, reach us directly below.</p>' +
           '<div class="fm-actions">' +
           '<a class="btn btn-ghost" href="tel:' + STUDIO_PHONE_TEL + '">Call ' + STUDIO_PHONE_DISPLAY + '</a>' +
           '<a class="btn btn-ghost" href="' + whatsappLink + '" target="_blank" rel="noopener">WhatsApp Us</a>' +
