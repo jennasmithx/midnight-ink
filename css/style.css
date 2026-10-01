@@ -658,6 +658,22 @@ section { padding: 110px 0; position: relative; }
 }
 .contact-info-list .ci-value { color: var(--cream); font-size: 1.05rem; }
 .contact-info-list a.ci-value:hover { color: var(--gold); }
+.contact-info-list .ci-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.ci-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 7px 14px;
+  border-radius: 2px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.ci-whatsapp:hover { border-color: var(--gold); background: rgba(216,207,184,0.08); }
+.ci-whatsapp svg { width: 14px; height: 14px; }
 
 .social-row { display: flex; gap: 16px; margin-top: 1.5em; }
 .social-row a {
@@ -709,12 +725,23 @@ form.contact-form { display: flex; flex-direction: column; gap: 22px; }
 .form-note { font-size: 0.78rem; color: var(--grey-dim); }
 .form-msg {
   display: none;
-  padding: 16px 18px;
+  padding: 32px 34px;
   border: 1px solid var(--gold-dim);
-  color: var(--gold-soft);
-  font-size: 0.88rem;
+  background: linear-gradient(145deg, rgba(216,207,184,0.07), transparent 60%);
 }
 .form-msg.show { display: block; }
+.form-msg .fm-icon {
+  width: 46px; height: 46px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.form-msg .fm-icon svg { width: 20px; height: 20px; color: var(--gold); }
+.form-msg h4 { margin-bottom: 0.4em; }
+.form-msg p { color: var(--grey); font-size: 0.92rem; margin-bottom: 1.6em; }
+.form-msg .fm-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.form-msg .fm-actions .btn { padding: 12px 22px; font-size: 0.72rem; }
 
 .hours-list { list-style: none; padding: 0; margin: 0; }
 .hours-list li {

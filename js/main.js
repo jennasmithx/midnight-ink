@@ -54,11 +54,23 @@ document.addEventListener('DOMContentLoaded', function () {
   // the site is hosted somewhere, for a smoother no-app-required submit.
   var form = document.querySelector('.contact-form');
   var STUDIO_EMAIL = 'info@midnightink.co.za';
+  var STUDIO_PHONE_DISPLAY = '082 769 0085';
+  var STUDIO_PHONE_TEL = '+27827690085';
+  var STUDIO_WHATSAPP = '27827690085';
+
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       var data = Object.fromEntries(new FormData(form).entries());
+      var firstName = (data.name || '').trim().split(' ')[0];
+
       var subject = 'Consultation Enquiry — ' + (data.name || 'New Enquiry');
       var body =
         'Name: ' + (data.name || '') + '\n' +
@@ -74,9 +86,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
       window.location.href = mailtoLink;
 
+      var whatsappText = 'Hi Midnight Ink, I just sent an enquiry' + (firstName ? ' (' + firstName + ')' : '') + ' — following up here too.';
+      var whatsappLink = 'https://wa.me/' + STUDIO_WHATSAPP + '?text=' + encodeURIComponent(whatsappText);
+
       var msg = document.querySelector('.form-msg');
       if (msg) {
-        msg.textContent = 'Opening your email app to send this through — if nothing opens, email us directly at ' + STUDIO_EMAIL + '.';
+        msg.innerHTML =
+          '<div class="fm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>' +
+          '<h4>Thank You' + (firstName ? ', ' + escapeHtml(firstName) : '') + '</h4>' +
+          '<p>We will contact you shortly to confirm your consultation. Your email app should be opening now to send this through — if it doesn’t, reach us directly below.</p>' +
+          '<div class="fm-actions">' +
+          '<a class="btn btn-ghost" href="tel:' + STUDIO_PHONE_TEL + '">Call ' + STUDIO_PHONE_DISPLAY + '</a>' +
+          '<a class="btn btn-ghost" href="' + whatsappLink + '" target="_blank" rel="noopener">WhatsApp Us</a>' +
+          '</div>';
         msg.classList.add('show');
       }
       form.reset();
