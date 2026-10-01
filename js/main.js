@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // app configured. Swap for a form service (Formspree, Netlify Forms) once
   // the site is hosted somewhere, for a smoother no-app-required submit.
   var form = document.querySelector('.contact-form');
-  var STUDIO_EMAIL = 'book@midnightinktattoo.co.za';
+  var STUDIO_EMAIL = 'info@midnightink.co.za';
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();

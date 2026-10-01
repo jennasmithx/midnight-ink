@@ -449,9 +449,27 @@ section { padding: 110px 0; position: relative; }
   align-items: center;
   justify-content: center;
   transition: transform 0.6s ease;
+  background-image: radial-gradient(circle at 28% 22%, rgba(255,255,255,0.22), transparent 55%);
+  background-blend-mode: overlay;
 }
 .gallery-item:hover .swatch { transform: scale(1.06); }
-.gallery-item .swatch svg { width: 46%; opacity: 0.55; }
+.gallery-item .swatch svg {
+  width: 46%;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35));
+}
+.gallery-item .swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+}
+
+/* Skin-tone placeholder swatches — stand-ins for real tattoo photography */
+.skin-1 { background-color: #e3bd96; background-image: linear-gradient(145deg, #ecc9a4, #c9966a), radial-gradient(circle at 28% 22%, rgba(255,255,255,0.22), transparent 55%); background-blend-mode: normal, overlay; }
+.skin-2 { background-color: #c9966a; background-image: linear-gradient(145deg, #d3a877, #a9784e), radial-gradient(circle at 28% 22%, rgba(255,255,255,0.2), transparent 55%); background-blend-mode: normal, overlay; }
+.skin-3 { background-color: #9c6b45; background-image: linear-gradient(145deg, #a9764d, #6e4529), radial-gradient(circle at 28% 22%, rgba(255,255,255,0.16), transparent 55%); background-blend-mode: normal, overlay; }
+.skin-4 { background-color: #6e4529; background-image: linear-gradient(145deg, #7a5133, #432b1a), radial-gradient(circle at 28% 22%, rgba(255,255,255,0.14), transparent 55%); background-blend-mode: normal, overlay; }
 
 .gallery-item .g-info {
   position: absolute;
